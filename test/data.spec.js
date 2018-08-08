@@ -1,5 +1,5 @@
-describe('database', () => {
-  it('debería exponer función createVisiter en objeto global', () => {
-    assert.isFunction(createVisiter);
+describe('firebase', () => {
+  it('database debería ser un objeto global.', () => {
+    assert.isObject(database);
   });
 });
