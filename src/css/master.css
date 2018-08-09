@@ -1,13 +1,10 @@
 .almost-dark {
   background-color: #333333;
 }
-#picture {
+#picture, #snapshot, #recapture {
   display: none;
 }
 
-#data-general {
-  display: none;
-}
 
 .font-white {
   color: white;
