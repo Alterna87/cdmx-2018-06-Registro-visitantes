@@ -21,7 +21,6 @@ uploadImages.putString(snap, 'data_url').then(function(snapshot) {
   console.log('Uploaded a base64 string!');
 });
 
-
 });
 
 camera.addEventListener('change', (event)=> {

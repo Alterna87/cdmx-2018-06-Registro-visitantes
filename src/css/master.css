@@ -1,0 +1,55 @@
+.almost-dark {
+  background-color: #333333;
+}
+#picture {
+  display: none;
+}
+
+#data-general {
+  display: none;
+}
+
+.font-white {
+  color: white;
+  font-family: 'Actor', sans-serif;
+}
+
+.title {
+  font-size: 10em;
+}
+
+.margin-titletop {
+  margin-top: 215px !important;
+  padding-left: 63px !important;
+}
+
+.medium-font {
+  font-size: 3em;
+}
+.left-subtitle {
+      margin-left: 35px !important;
+}
+.btn-register {
+  margin-top: 97px !important;
+margin-left: 348px !important;
+}
+
+.font-arrow {
+  font-size: 30px;
+}
+
+.font-icon {
+  font-size: 47px !important;
+}
+
+.color-yellow {
+  color: #FFC107 !important;
+}
+
+.frm-visits {
+  margin-top: 113px;
+}
+
+header {
+  margin-top: 25px;
+}

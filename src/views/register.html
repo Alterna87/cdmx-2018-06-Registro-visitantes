@@ -2,15 +2,49 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Registro de Visitantes</title>
-  </head>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <title>Registro de Visitantes</title>
+    </head>
   <body>
-    <video id="player" controls autoplay >
-    </video>
-    <button id="capture">Take a Picture</button>
-    <canvas id="snapshot" width="320" height="240"></canvas>
-    <input type="file" accept="img/*" capture= "camera" id="camera">
-    <img id="frame">
+    <header>
+      <a href="" class="col-md-1 color-yellow"><i class="material-icons font-icon">arrow_back_ios</i></a>
+      <a href="" class="col-md-1 offset-10 color-yellow"><i class="material-icons font-icon">arrow_forward_ios</i></a>
+    </header>
+    <section class="container">
+
+    <section id="frm-register" class="frm-visits">
+      <form >
+        <section id= "data-general">
+        <section class="form-group">
+          <label for="usr">Nombre:</label>
+          <input type="text" class="form-control" id="name-visit">
+        </section>
+        <section class="form-group">
+          <label for="usr">Apellidos:</label>
+          <input type="text" class="form-control" id="lastname-visit">
+        </section>
+        <section class="form-group">
+          <label for="usr">Correo:</label>
+          <input type="text" class="form-control" id="email-visit">
+        </section>
+      </section>
+        <section id="picture">
+        <video id="player" controls autoplay class="camera-radius">
+        </video>
+        <button id="capture">Toma foto</button>
+        <canvas id="snapshot" width="320" height="240"></canvas>
+        <input type="file" accept="img/*" capture= "camera" id="camera">
+        <img id="frame">
+        </section>
+      </form>
+
+    </section>
+    </section>
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script type="text/javascript" src= "../js/database.js"></script>
     <script type="text/javascript" src= "../js/register.js"></script>
