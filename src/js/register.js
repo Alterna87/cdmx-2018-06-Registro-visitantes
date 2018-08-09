@@ -11,8 +11,22 @@ const handleSuccess = (stream) => {
 captureButton.addEventListener('click', ()=> {
 let context = snapshot.getContext('2d');
 context.drawImage(player, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
-console.log();
+
+let snap = snapshotCanvas.toDataURL();
+let refImages = firebase.storage().ref();
+
+// console.log(file);
+let uploadImages = refImages.child('images/prueba.png');
+uploadImages.putString(snap, 'data_url').then(function(snapshot) {
+  console.log('Uploaded a base64 string!');
 });
+
+
+});
+
+camera.addEventListener('change', (event)=> {
+  let file = event.target.files[0];
+})
  //
- // navigator.mediaDevices.getUserMedia({video: true})
- //  .then(handleSuccess);
+ navigator.mediaDevices.getUserMedia({video: true})
+  .then(handleSuccess);
