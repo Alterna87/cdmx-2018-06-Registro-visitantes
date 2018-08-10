@@ -1,61 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/master.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <title>Registro de Visitantes</title>
-    </head>
-  <body>
-    <header>
-      <a class="col-md-1 color-yellow arrow-left" id=""><i class="material-icons font-icon">arrow_back_ios</i></a>
-      <a class="col-md-1 offset-10 color-yellow " id="arrow-right"><i class="material-icons font-icon">arrow_forward_ios</i></a>
-      <section id="arrow-sig" class="col-md-1 offset-10">
 
-      </section>
-    </header>
-    <section class="container">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/master.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Registro de Visitantes</title>
+</head>
+
+<body>
+  <header>
+    <a class="col-md-1 color-yellow arrow-left" id="">
+      <i class="material-icons font-icon">arrow_back_ios</i>
+    </a>
+    <a class="col-md-1 offset-10 color-yellow " id="arrow-right">
+      <i class="material-icons font-icon">arrow_forward_ios</i>
+    </a>
+    <section id="arrow-sig" class="col-md-1 offset-10">
+
+    </section>
+  </header>
+  <section class="container">
     <section id="frm-register" class="frm-visits">
-      <form >
-        <section id= "data-general">
-        <section class="form-group">
-          <label for="usr">Nombre:</label>
-          <input type="text" class="form-control" id="name-visit">
+      <form>
+        <section id="data-general">
+          <section class="form-group">
+            <label for="usr">Nombre:</label>
+            <input type="text" class="form-control" id="name-visit">
+          </section>
+          <section class="form-group">
+            <label for="usr">Apellidos:</label>
+            <input type="text" class="form-control" id="lastname-visit">
+          </section>
+          <section class="form-group">
+            <label for="usr">Correo:</label>
+            <input type="text" class="form-control" id="email-visit">
+          </section>
         </section>
-        <section class="form-group">
-          <label for="usr">Apellidos:</label>
-          <input type="text" class="form-control" id="lastname-visit">
-        </section>
-        <section class="form-group">
-          <label for="usr">Correo:</label>
-          <input type="text" class="form-control" id="email-visit">
-        </section>
-      </section>
         <section id="picture">
-        <video id="player" autoplay width="320" height="320" class="col-md-12">
-        </video>
-        <section id="shot">
-        </section>
+          <video id="player" autoplay width="320" height="320" class="col-md-12">
+          </video>
+          <section id="shot">
+          </section>
 
-        <button type="button" id="capture" class="btn btn-warning btn-lg col-md-4 offset-4">Foto</button>
-        <button type="button" id="recapture" class="btn btn-warning btn-lg col-md-4 offset-4">Volver a Tomar Foto</button>
-      </section>
-      <section id="register">
-        <section class="form-group">
+          <button type="button" id="capture" class="btn btn-warning btn-lg col-md-4 offset-4">Foto</button>
+          <button type="button" id="recapture" class="btn btn-warning btn-lg col-md-4 offset-4">Volver a Tomar Foto</button>
+        </section>
+        <section id="register">
+
+          <!-- search de empleado -->
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Buscar Empleado</label>
+            <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas...">
+            <ul class="list-group" id="templete-empleados">
+              <!-- aqui va el templete -->
+            </ul>
+            <input type="text" class="form-control" id="company">
+            <button type="button" class="btn btn-warning btn-lg col-md-4 offset-4" id="notification">Notificar</button>
+          </div>
+          <!-- <section class="form-group">
           <label for="usr">A quien visitas:</label>
           <input type="text" class="form-control" id="company">
           <button type="button"  class="btn btn-warning btn-lg col-md-4 offset-4" id="notification">Notificar</button>
+        </section> -->
         </section>
-      </section>
       </form>
     </section>
-    </section>
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script type="text/javascript" src= "../js/database.js"></script>
-    <script type="text/javascript" src= "../js/register.js"></script>
-  </body>
+  </section>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+  <script type="text/javascript" src="../js/database.js"></script>
+  <script type="text/javascript" src="../js/register.js"></script>
+
+  <!-- BOOSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>

@@ -11,10 +11,6 @@ window.database = {
     };
     firebase.initializeApp(config);
   },
-  createVisiter: ()=> {
-    
-  }
-
 
 };
 
