@@ -4,5 +4,5 @@ const begin = () => {
 
 
 
-let register = document.getElementById('register');
+let register = document.getElementById('btn-registersig');
 register.addEventListener('click', begin);

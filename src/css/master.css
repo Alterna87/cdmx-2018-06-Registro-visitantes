@@ -1,9 +1,10 @@
 .almost-dark {
   background-color: #333333;
 }
-#picture, #snapshot, #recapture {
+#picture, #snapshot, #recapture, #register {
   display: none;
 }
+
 
 
 .font-white {
