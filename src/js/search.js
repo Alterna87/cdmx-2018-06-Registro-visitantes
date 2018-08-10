@@ -1,24 +1,27 @@
-
-(function () {
-  const config = {
-    apiKey: 'AIzaSyDRjINqfMgVY7CH_sCyrqMIDpIZFWskDN8',
-    authDomain: 'visitor-registry-52230.firebaseapp.com',
-    databaseURL: 'https://visitor-registry-52230.firebase io.com',
-    projectId: 'visitor-registry-52230',
-    storageBucket: 'visitor-registry-52230.appspot.com',
-    messagingSenderId: '433105581092'
-  };
-
-  firebase.initializeApp(config);
-
-  //   get elements
-  const comment = document.getElementById('empleado');
-  console.log(comment);
-
-  //  sincronizar objeto
-  dbRefObject.on('value', snap =>)
-}());
-
+window.onload = () => {
+  const url = 'https://visitor-registry-52230.firebaseio.com/empleados.json';
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => {
+      console.log(response);
+      document.getElementById('empleado').addEventListener('keyup', (event) => {
+        console.log(event.target.value);
+        const filtrarEmpleados = response.filter((empleado) => {
+          return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
+        }).map((empleado) => {
+          return (`<li class="list-group-item-secondary">${empleado.name} ${empleado.lastname} de ${empleado.company}</li>`);
+        }).join('');
+        document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
+        console.log(filtrarEmpleados);
+      });
+    });
+};
 // const url = 'https://visitor-registry-52230.firebaseio.com/';
 // const comment = document.getElementById('empleado').value;
 // fetch(url, {
