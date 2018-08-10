@@ -111,7 +111,7 @@ Como siguiente paso se realizaron algunos  sketch a lapiz y papel donde se plasm
 
 Una vez que se definieron las nececidades de nuestro producto comenzamos con un User Flow, para ayudarnos  a comprender el comportamiento  y asi poder materializar frente al cliente las interacciones de los usuarios con el producto, llegando asi al funcionamiento del producto solicitado, como se muestra a continuación:
 
-![User Flow](./src/img/UserFlow-Coworking.pdf)
+![User Flow](./src/img/userflow.pdf)
 
 
 Luego de observar como se vería nuestra interfaz en lapiz y papel , y plasmando todos los requerimientos que se necesitaban se procedió a realizar a color  las interfaces con ayuda de Figma. Se buscó que nuestra interfaz  fuera los mas amigable posible , fácil de usar pero sobre todo fácil de entender para el usuario.
@@ -154,7 +154,7 @@ Preguntas realizadas:
 
 Audio y papeleta de la entrevista a Miriam Castañeda de Terminal 1:
 
-![Audio](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/audios/entrevistaterminal1.mp4)
+[_Click aquí_](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/audios/entrevistaterminal1.mp4)
 
 
 ![Papeleta](./src/img/registroterminal1.jpeg)
@@ -164,7 +164,7 @@ Audio y papeleta de la entrevista a Miriam Castañeda de Terminal 1:
 
 Audio y papeleta de la entrevista a Karen Aldana de 3er ESpacio:
 
-![Audio](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/audios/entrevista3erespacio.mp4)
+[_Click aquí_](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/audios/entrevista3erespacio.mp4)
 
 
 ![Papeleta](./src/img/registro3erespacio.jpeg)
@@ -175,4 +175,4 @@ Audio y papeleta de la entrevista a Karen Aldana de 3er ESpacio:
 Video realizado en el Coworking-Wework
 
 
-![Video](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/videos/sistemaderegistro.mp4)
+[_Click aquí_](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/videos/sistemaderegistro.mp4)
