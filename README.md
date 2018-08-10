@@ -111,7 +111,7 @@ Como siguiente paso se realizaron algunos  sketch a lapiz y papel donde se plasm
 
 Una vez que se definieron las nececidades de nuestro producto comenzamos con un User Flow, para ayudarnos  a comprender el comportamiento  y asi poder materializar frente al cliente las interacciones de los usuarios con el producto, llegando asi al funcionamiento del producto solicitado, como se muestra a continuación:
 
-![User Flow](./src/img/userflow.pdf)
+[User Flow](./src/img/userflow.pdf)
 
 
 Luego de observar como se vería nuestra interfaz en lapiz y papel , y plasmando todos los requerimientos que se necesitaban se procedió a realizar a color  las interfaces con ayuda de Figma. Se buscó que nuestra interfaz  fuera los mas amigable posible , fácil de usar pero sobre todo fácil de entender para el usuario.
