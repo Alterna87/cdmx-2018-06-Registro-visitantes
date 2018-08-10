@@ -1,8 +1,14 @@
 window.database = {
   // Función Francis
-  createVisiter: ()=> {
+  createVisiter: () => {
+
+  },
+  // funcion para seleccionar empresa a la que pertenece el empleado
+  buscarEmplado: () => {
+
 
   }
 
-
 };
+
+
