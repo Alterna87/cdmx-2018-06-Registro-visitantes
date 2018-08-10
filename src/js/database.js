@@ -11,10 +11,7 @@ window.database = {
     };
     firebase.initializeApp(config);
   },
-  createVisiter: () => { },
-  // funcion para seleccionar empresa a la que pertenece el empleado
-  buscarEmplado: () => { },
-  createVisiter: () => { }
+
 };
 
 database.connection();
