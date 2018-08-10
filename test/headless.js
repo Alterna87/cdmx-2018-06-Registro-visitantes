@@ -1,7 +1,4 @@
 global.window = global;
 global.assert = require('chai').assert;
-global.fixtures = {
-  users: require('../data/laboratoria.json'),
-};
-require('../src/data');
+require('../src/js/database');
 require('./data.spec.js');
