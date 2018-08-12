@@ -32,8 +32,7 @@ const showRegister = () => {
   let picture = document.getElementById('picture');
   company.style.display = 'block';
   picture.style.display = 'none';
-
-}
+};
 const showsnapshot = () => {
   document.getElementById('data-general').style.display = 'none';
   document.getElementById('picture').style.display = 'block';
@@ -54,7 +53,6 @@ recapture.addEventListener('click', () => {
   recapture.style.display = 'none';
   player.style.display = 'block';
   snapshotCanvas.style.display = 'none';
-
 });
 
 const showmodal = () => {
@@ -70,10 +68,9 @@ const showmodal = () => {
     html: `Se le ha enviado una notificación a ${company} <br>` +
       `Toma asiento Por favor`,
     showConfirmButton: false,
-    timer: 1500
-  })
-
-}
+    timer: 2000
+  });
+};
 
 let arrowRight = document.getElementById('arrow-right');
 arrowRight.addEventListener('click', showsnapshot);
@@ -81,33 +78,89 @@ arrowRight.addEventListener('click', showsnapshot);
 
 let notification = document.getElementById('notification');
 notification.addEventListener('click', showmodal);
-
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(handleSuccess);
+//   acceso a la camara
+// navigator.mediaDevices.getUserMedia({ video: true })
+//   .then(handleSuccess);
 
 
 //  funcionalidad del search para buscar empleados
 window.onload = () => {
-  const url = 'https://visitor-registry-52230.firebaseio.com/empleados.json';
-  fetch(url, {
+  const url = 'https://visitor-registry-52230.firebaseio.com/';
+  fetch(url + 'empresas.json', {
     method: 'GET',
+    //  informacion del request
     headers: {
+      //  lo que se envia lo tome como formato json
       'Content-Type': 'application/json'
     }
   })
     .then(res => res.json())
     .catch(error => console.error('Error:', error))
-    .then(response => {
-      console.log(response);
-      document.getElementById('empleado').addEventListener('keyup', (event) => {
-        console.log(event.target.value);
-        const filtrarEmpleados = response.filter((empleado) => {
-          return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
-        }).map((empleado) => {
-          return (`<li class="list-group-item-secondary">${empleado.name} ${empleado.lastname} de ${empleado.company}</li>`);
-        }).join('');
-        document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
-        console.log(filtrarEmpleados);
+    // el response ya esta convertido en json por eso se llama difernte
+    .then(empresas => {
+      console.log(empresas);
+
+      //  filtado por compañia
+      // document.getElementById('company').addEventListener((event) => {
+      //   console.log(event.target.value);
+      const companys = empresas.map((company) => {
+        return (`<option value="${company.id}">${company.name}</option>`);
       });
+      document.getElementById('select-empresas').innerHTML += companys;
+      console.log(companys);
+      // });
     });
+  document.getElementById('select-empresas').addEventListener('change', (event) => {
+    console.log(event.target.value);
+    fetch(url + 'empleados.json?orderBy="company"&equalTo=' + event.target.value, {
+      method: 'GET',
+      //  informacion del request
+      headers: {
+        //  lo que se envia lo tome como formato json
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(empleados => {
+        // console.log(empleados, empleados.length);
+        return window.localStorage.setItem('empleados', JSON.stringify(empleados));
+      });
+  });
+  // keyup = evento que se dispara cuandode suelta una tecla
+  document.getElementById('empleado').addEventListener('keyup', (event) => {
+    let empleados = window.localStorage.getItem('empleados');
+    empleados = JSON.parse(empleados);
+
+    console.log('[empleados]', empleados);
+
+    let empleadosFiltrados = Object.keys(empleados).reduce((accumulador, indice) => {
+      accumulador.push(empleados[indice]);
+      return accumulador;
+    }, []).filter((empleado) => {
+      return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
+    }).map((empleado) => {
+      return (`
+        <li class="list-group-item-secondary" onclick="pintaEmpleado('${empleado.name} ${empleado.lastname}')">
+          ${empleado.name} ${empleado.lastname}
+        </li>
+      `);
+    }).join('');
+
+    document.getElementById('templete-empleados').innerHTML = empleadosFiltrados;
+
+    // console.log(event.target.value);
+    // const filtrarEmpleados = response.filter((empleado) => {
+    //   return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
+    // }).map((empleado) => {
+    //   return (`<li class="list-group-item-secondary" onclick="pintaEmpleado()">${empleado.name} ${empleado.lastname}</li>`);
+    // }).join('');
+    // document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
+    // console.log(filtrarEmpleados);
+  });
+
+  window.pintaEmpleado = (name) => {
+    document.getElementById('templete-empleados').innerHTML = '';
+
+    return document.getElementById('empleado').value = name;
+  }
 };

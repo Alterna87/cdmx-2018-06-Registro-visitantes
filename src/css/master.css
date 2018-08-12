@@ -55,3 +55,7 @@ header {
 .list-group{
   list-style: none;
 }
+
+#company{
+  border: 0;
+}
