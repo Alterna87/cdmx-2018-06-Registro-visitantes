@@ -8,7 +8,7 @@ const handleSuccess = (stream) => {
 
 captureButton.addEventListener('click', () => {
   let shot = document.getElementById('shot');
-  shot.innerHTML = `<canvas id= 'snapshot' width='320' height='320' class = 'col-md-12 rounded-circle'> </canvas>`;
+  shot.innerHTML = `<canvas id= 'snapshot' width='220' height='220' class = 'col-md-12 rounded-circle'> </canvas>`;
   snapshotCanvas = document.getElementById('snapshot');
   let context = snapshot.getContext('2d');
   snapshotCanvas.style.display = 'block';
@@ -41,6 +41,7 @@ const showsnapshot = () => {
   let arrowSig = document.getElementById('arrow-sig');
   arrowSig.innerHTML =  `<button type='button' class=' col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
   </button>`
+    document.getElementById('body-bg').classList.add("almost-dark");
   let arrowRightRegister = document.getElementById('arrow-register-right');
   arrowRightRegister.addEventListener('click', showRegister);
   // let arrowRight = document.getElementsByClassName('arrow-right');
@@ -85,6 +86,8 @@ notification.addEventListener('click', showmodal);
 
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
+
+
 
 
 //  funcionalidad del search para buscar empleados

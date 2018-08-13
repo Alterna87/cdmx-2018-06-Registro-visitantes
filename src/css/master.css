@@ -68,6 +68,10 @@ header {
   color: #333333 !important;
 }
 
+.margin-btn {
+  margin-top: 35px !important ;
+}
+
 input {
   outline: 0;
   border-width: 0 0 2px !important;
@@ -78,6 +82,12 @@ input {
 input:focus {
   border-color: #333333 !important;
 }
+
+.playerradius {
+border-radius: 5px 30px 45px 60px;
+}
+
+
 
 
 
