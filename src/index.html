@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <title>Registro de visitantes</title>
@@ -10,20 +9,55 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Actor" rel="stylesheet">
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <!-- Font Awesome JS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
 </head>
-
 <body class="almost-dark">
-  <div class="container-fluid">
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class=" navbar navbar-dark">
+      <div id="dismiss">
+        <i class="material-icons">arrow_left_alt</i>
+      </div>
+      <div class="sidebar-header">
+
+      </div>
+      <ul class="list-unstyled ">
+        <li>
+          <li>
+            <a href="#" id="visiter" class="font-dark">
+              <i class="material-icons">account_circle</i> ADMINISTRADOR</a>
+          </li>
+        </li>
+        <li>
+          <a href="#" id="admin" class = "font-dark">
+            <i class="material-icons">done</i> VISITANTES</a>
+        </li>
+        </ul>
+    </nav>
+    <button type="button" id="sidebarCollapse" class="btn btn-info position-left bg-dark">
+              <i class="material-icons">settings</i>
+            </button>
+
     <h1 class="col-md offset-1 font-white title margin-titletop">Coworking</h1>
     <h2 class="col-md offset-1 left-subtitle font-white medium-font text-center">The place to grow</h2>
     <button type="button" class="btn btn-warning btn-lg col-md-4 offset-4 btn-register" id="btn-registersig">Registrate</button>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
     crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
   <script type="text/javascript" src="js/welcome.js">
   </script>
 </body>
