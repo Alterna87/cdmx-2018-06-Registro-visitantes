@@ -65,11 +65,11 @@ recapture.addEventListener('click', () => {
   snapshotCanvas.style.display = 'none';
 });
 
-const showNotification = () => {
-  document.getElementById('notificar').addEventListener('click', (event) => {
-    console.log('hola mundo');
-  })
-}
+// const showNotification = () => {
+//   document.getElementById('notificar').addEventListener('click', (event) => {
+//     console.log('hola mundo');
+//   })
+// }
 const showmodal = () => {
   document.getElementById('body-bg').classList.add('almost-dark');
   let name = document.getElementById('empleado').value;
@@ -177,5 +177,5 @@ window.onload = () => {
     document.getElementById('templete-empleados').innerHTML = '';
 
     return document.getElementById('empleado').value = name;
-  }
+  };
 };
