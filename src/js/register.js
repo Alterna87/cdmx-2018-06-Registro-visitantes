@@ -35,17 +35,17 @@ const showRegister = () => {
   company.style.display = 'block';
   picture.style.display = 'none';
   document.getElementById('arrow-sig').style.display = 'none';
-  document.getElementById('body-bg').classList.remove('almost-dark');
+  document.getElementById('body-bg').classList.remove("almost-dark");
 };
 
 const showsnapshot = () => {
+  document.getElementById('body-bg').classList.add('almost-dark');
   document.getElementById('data-general').style.display = 'none';
   document.getElementById('picture').style.display = 'block';
   document.getElementById('arrow-right').style.display = 'none';
   let arrowSig = document.getElementById('arrow-sig');
   arrowSig.innerHTML = `<button type='button' class= 'col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
   </button>`;
-  document.getElementById('body-bg').classList.add('almost-dark"');
   let arrowRightRegister = document.getElementById('arrow-register-right');
   arrowRightRegister.addEventListener('click', showRegister);
   // let arrowRight = document.getElementsByClassName('arrow-right');
@@ -63,6 +63,8 @@ recapture.addEventListener('click', () => {
 });
 
 const showmodal = () => {
+  let refImages = firebase.storage().ref();
+  let snapshotCanvas = document.getElementById('snapshot');
   document.getElementById('body-bg').classList.add('almost-dark');
   let name = document.getElementById('name-visit').value;
   let lastname = document.getElementById('lastname-visit').value;
@@ -71,8 +73,41 @@ const showmodal = () => {
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${company} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
   <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
-
   `;
+  let snap = snapshotCanvas.toDataURL();
+  // console.log(snap);
+  let fecha = new Date();
+  let time = fecha.getHours() + ':' + fecha.getMinutes()
+  let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
+  let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
+  uploadImages.on('state_changed', snapshot => {
+
+  }, error =>{
+    alert('No se cargo debidamente la imagen');
+  }, () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
+      console.log(downloadURL);
+      console.log(name);
+      database.uploadData(name, lastname, downloadURL, company);
+      // firebase.database().ref('user/posts').push({
+      //   ui: user.uid,
+      //   name: user.displayName,
+      //   photo: user.photoURL,
+      //   images: downloadURL,
+      //   type: 'Receta',
+      //   title: title.value,
+      //   people: people.value,
+      //   ingredients: ingredients.value,
+      //   steps: steps.value,
+      //   like: 0
+      // });
+    // modified by Francis
+    });
+  });
+  //   c
+  // var fecha = new Date();
 
   document.getElementById('ready').addEventListener('click', toBack);
 };
@@ -86,6 +121,9 @@ notification.addEventListener('click', showmodal);
 
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
+
+
+
 
 // Hasta aquí aplica cambios Francis
 
