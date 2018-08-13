@@ -1,3 +1,6 @@
+// TODO:
+// funcion de notificar
+
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
 let camera = document.getElementById('camera');
@@ -55,32 +58,39 @@ recapture.addEventListener('click', () => {
   snapshotCanvas.style.display = 'none';
 });
 
+const showNotification = () => {
+  document.getElementById('notificar').addEventListener('click', (event) => {
+    console.log('hola mundo');
+  })
+}
 const showmodal = () => {
-  let name = document.getElementById('name-visit').value;
+  let name = document.getElementById('empleado').value;
   let lastname = document.getElementById('lastname-visit').value;
   let email = document.getElementById('email-visit').value;
   let company = document.getElementById('company').value;
+  console.log(name);
   swal({
 
     position: 'top-end',
     type: 'success',
-    title: `Bienvenido ${name}`,
-    html: `Se le ha enviado una notificación a ${company} <br>` +
+    title: `Bienvenido Nombre de Visitante`,
+    html: `Se le ha enviado una notificación a ${name} <br>` +
       `Toma asiento Por favor`,
     showConfirmButton: false,
     timer: 2000
   });
 };
 
+//  flechas de siguiente
 let arrowRight = document.getElementById('arrow-right');
 arrowRight.addEventListener('click', showsnapshot);
-//
+
 
 let notification = document.getElementById('notification');
 notification.addEventListener('click', showmodal);
 //   acceso a la camara
-// navigator.mediaDevices.getUserMedia({ video: true })
-//   .then(handleSuccess);
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(handleSuccess);
 
 
 //  funcionalidad del search para buscar empleados
