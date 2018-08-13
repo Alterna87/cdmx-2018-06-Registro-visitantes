@@ -12,12 +12,15 @@ window.database = {
     firebase.initializeApp(config);
   },
 
-  uploadData: (name, lastname, downloadURL, company) => {
+  uploadData: (name, lastname, downloadURL, company, empleado, date, time) => {
     firebase.database().ref('visiters').push({
         name: name,
-      lastname: lastname,
+        lastname: lastname,
         images: downloadURL,
         company: company,
+        empleado: empleado,
+        date: date,
+        time: time
       });
   }
 };
