@@ -12,6 +12,17 @@ window.database = {
     firebase.initializeApp(config);
   },
 
+  uploadData: (name, lastname, downloadURL, visits, company, date, time) => {
+    firebase.database().ref('Visitas').push({
+        name: name,
+        lastname: lastname,
+        images: downloadURL,
+        visits: visits,
+        company: company,
+        date: date,
+        time: time
+      });
+  }
 };
 
 database.connection();
