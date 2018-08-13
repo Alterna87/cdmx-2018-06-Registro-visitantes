@@ -8,13 +8,14 @@ const handleSuccess = (stream) => {
 
 captureButton.addEventListener('click', () => {
   let shot = document.getElementById('shot');
-  shot.innerHTML = `<canvas id= 'snapshot' width='220' height='220' class = 'col-md-12 rounded-circle'> </canvas>`;
+  shot.innerHTML = `<canvas id= 'snapshot' width='220' height='220' class = 'col-md-12 rounded-circle'>
+  </canvas>`;
   snapshotCanvas = document.getElementById('snapshot');
   let context = snapshot.getContext('2d');
   snapshotCanvas.style.display = 'block';
   context.drawImage(player, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
   player.style.display = 'none';
-  recapture.style.display = 'block'
+  recapture.style.display = 'block';
   captureButton.style.display = 'none';
   // let snap = snapshotCanvas.toDataURL();
 
@@ -22,13 +23,11 @@ captureButton.addEventListener('click', () => {
   // console.log(file);
   // let uploadImages = refImages.child(`images/${fecha}.png`);
   // uploadImages.putString(snap, 'data_url').then(function(snapshot) {
-  //   console.log('Uploaded a base64 string!');
-  // });
-
+  //   c
 });
-const toBack =() => {
+const toBack = () => {
   location.href = ('../index.html');
-}
+};
 
 const showRegister = () => {
   let company = document.getElementById('register');
@@ -36,16 +35,17 @@ const showRegister = () => {
   company.style.display = 'block';
   picture.style.display = 'none';
   document.getElementById('arrow-sig').style.display = 'none';
-document.getElementById('body-bg').classList.remove("almost-dark");
-}
+  document.getElementById('body-bg').classList.remove('almost-dark');
+};
+
 const showsnapshot = () => {
   document.getElementById('data-general').style.display = 'none';
   document.getElementById('picture').style.display = 'block';
   document.getElementById('arrow-right').style.display = 'none';
   let arrowSig = document.getElementById('arrow-sig');
-  arrowSig.innerHTML =  `<button type='button' class=' col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
-  </button>`
-    document.getElementById('body-bg').classList.add("almost-dark");
+  arrowSig.innerHTML = `<button type='button' class= 'col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
+  </button>`;
+  document.getElementById('body-bg').classList.add('almost-dark"');
   let arrowRightRegister = document.getElementById('arrow-register-right');
   arrowRightRegister.addEventListener('click', showRegister);
   // let arrowRight = document.getElementsByClassName('arrow-right');
@@ -60,11 +60,10 @@ recapture.addEventListener('click', () => {
   recapture.style.display = 'none';
   player.style.display = 'block';
   snapshotCanvas.style.display = 'none';
-
 });
 
 const showmodal = () => {
-  document.getElementById('body-bg').classList.add("almost-dark");
+  document.getElementById('body-bg').classList.add('almost-dark');
   let name = document.getElementById('name-visit').value;
   let lastname = document.getElementById('lastname-visit').value;
   let company = document.getElementById('empleado').value;
@@ -76,7 +75,6 @@ const showmodal = () => {
   `;
 
   document.getElementById('ready').addEventListener('click', toBack);
-
 };
 
 let arrowRight = document.getElementById('arrow-right');
@@ -89,8 +87,7 @@ notification.addEventListener('click', showmodal);
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
 
-
-
+// Hasta aquí aplica cambios Francis
 
 //  funcionalidad del search para buscar empleados
 window.onload = () => {
