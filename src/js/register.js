@@ -1,3 +1,6 @@
+// TODO:
+// funcion de notificar
+
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
 let camera = document.getElementById('camera');
@@ -62,15 +65,20 @@ recapture.addEventListener('click', () => {
   snapshotCanvas.style.display = 'none';
 });
 
+const showNotification = () => {
+  document.getElementById('notificar').addEventListener('click', (event) => {
+    console.log('hola mundo');
+  })
+}
 const showmodal = () => {
   let refImages = firebase.storage().ref();
   let snapshotCanvas = document.getElementById('snapshot');
   document.getElementById('body-bg').classList.add('almost-dark');
-  let name = document.getElementById('name-visit').value;
+  let name = document.getElementById('empleado').value;
   let lastname = document.getElementById('lastname-visit').value;
-  let company = document.getElementById('empleado').value;
-  document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola, ${name} ${lastname}</h3>
-  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${company} de tu llegada</p>
+  let company = document.getElementById('name-visit').value;
+  document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola visitante</h3>
+  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${name} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
   <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
   `;
@@ -112,13 +120,14 @@ const showmodal = () => {
   document.getElementById('ready').addEventListener('click', toBack);
 };
 
+//  flechas de siguiente
 let arrowRight = document.getElementById('arrow-right');
 arrowRight.addEventListener('click', showsnapshot);
-//
+
 
 let notification = document.getElementById('notification');
 notification.addEventListener('click', showmodal);
-
+//   acceso a la camara
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
 
@@ -129,26 +138,82 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 //  funcionalidad del search para buscar empleados
 window.onload = () => {
-  const url = 'https://visitor-registry-52230.firebaseio.com/empleados.json';
-  fetch(url, {
+  const url = 'https://visitor-registry-52230.firebaseio.com/';
+  fetch(url + 'empresas.json', {
     method: 'GET',
+    //  informacion del request
     headers: {
+      //  lo que se envia lo tome como formato json
       'Content-Type': 'application/json'
     }
   })
     .then(res => res.json())
     .catch(error => console.error('Error:', error))
-    .then(response => {
-      console.log(response);
-      document.getElementById('empleado').addEventListener('keyup', (event) => {
-        console.log(event.target.value);
-        const filtrarEmpleados = response.filter((empleado) => {
-          return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
-        }).map((empleado) => {
-          return (`<li class="list-group-item-secondary">${empleado.name} ${empleado.lastname} de ${empleado.company}</li>`);
-        }).join('');
-        document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
-        console.log(filtrarEmpleados);
+    // el response ya esta convertido en json por eso se llama difernte
+    .then(empresas => {
+      console.log(empresas);
+
+      //  filtado por compañia
+      // document.getElementById('company').addEventListener((event) => {
+      //   console.log(event.target.value);
+      const companys = empresas.map((company) => {
+        return (`<option value="${company.id}">${company.name}</option>`);
       });
+      document.getElementById('select-empresas').innerHTML += companys;
+      console.log(companys);
+      // });
     });
+  document.getElementById('select-empresas').addEventListener('change', (event) => {
+    console.log(event.target.value);
+    fetch(url + 'empleados.json?orderBy="company"&equalTo=' + event.target.value, {
+      method: 'GET',
+      //  informacion del request
+      headers: {
+        //  lo que se envia lo tome como formato json
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(empleados => {
+        // console.log(empleados, empleados.length);
+        return window.localStorage.setItem('empleados', JSON.stringify(empleados));
+      });
+  });
+  // keyup = evento que se dispara cuandode suelta una tecla
+  document.getElementById('empleado').addEventListener('keyup', (event) => {
+    let empleados = window.localStorage.getItem('empleados');
+    empleados = JSON.parse(empleados);
+
+    console.log('[empleados]', empleados);
+
+    let empleadosFiltrados = Object.keys(empleados).reduce((accumulador, indice) => {
+      accumulador.push(empleados[indice]);
+      return accumulador;
+    }, []).filter((empleado) => {
+      return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
+    }).map((empleado) => {
+      return (`
+        <li class="list-group-item-secondary" onclick="pintaEmpleado('${empleado.name} ${empleado.lastname}')">
+          ${empleado.name} ${empleado.lastname}
+        </li>
+      `);
+    }).join('');
+
+    document.getElementById('templete-empleados').innerHTML = empleadosFiltrados;
+
+    // console.log(event.target.value);
+    // const filtrarEmpleados = response.filter((empleado) => {
+    //   return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
+    // }).map((empleado) => {
+    //   return (`<li class="list-group-item-secondary" onclick="pintaEmpleado()">${empleado.name} ${empleado.lastname}</li>`);
+    // }).join('');
+    // document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
+    // console.log(filtrarEmpleados);
+  });
+
+  window.pintaEmpleado = (name) => {
+    document.getElementById('templete-empleados').innerHTML = '';
+
+    return document.getElementById('empleado').value = name;
+  }
 };
