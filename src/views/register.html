@@ -16,31 +16,20 @@
 
 <body>
   <header>
-    <a class="col-md-1 color-yellow arrow-left" id="">
-      <i class="material-icons font-icon">arrow_back_ios</i>
-    </a>
-    <a class="col-md-1 offset-10 color-yellow " id="arrow-right">
-      <i class="material-icons font-icon">arrow_forward_ios</i>
-    </a>
-    <section id="arrow-sig" class="col-md-1 offset-10">
-
+    <section id="arrow-sig">
+      <button type="button" class=" col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle" id="arrow-right"><i class="material-icons font-icon">arrow_forward</i>
+      </button>
     </section>
-  </header>
+    </header>
   <section class="container">
     <section id="frm-register" class="frm-visits">
       <form>
         <section id="data-general">
           <section class="form-group">
-            <label for="usr">Nombre:</label>
-            <input type="text" class="form-control" id="name-visit">
+          <input type="text" class="form-control" id="name-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Nombre / Name">
           </section>
           <section class="form-group">
-            <label for="usr">Apellidos:</label>
-            <input type="text" class="form-control" id="lastname-visit">
-          </section>
-          <section class="form-group">
-            <label for="usr">Correo:</label>
-            <input type="text" class="form-control" id="email-visit">
+          <input type="text" class="form-control" id="lastname-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Apellido / Last name">
           </section>
         </section>
         <section id="picture">

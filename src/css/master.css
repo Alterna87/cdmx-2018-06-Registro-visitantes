@@ -37,7 +37,8 @@ margin-left: 348px !important;
 }
 
 .font-icon {
-  font-size: 47px !important;
+  font-size: 60px !important;
+  text-align: center !important;
 }
 
 .color-yellow {
@@ -58,7 +59,27 @@ header {
 
 .font-a {
   background-color: white !important;
+
 }
+.rounded-circle {
+  text-align: center !important;
+}
+.font-dark {
+  color: #333333 !important;
+}
+
+input {
+  outline: 0;
+  border-width: 0 0 2px !important;
+  border-color: black !important;
+  font-size: 34px !important;
+  margin-bottom:  95px !important;
+}
+input:focus {
+  border-color: #333333 !important;
+}
+
+
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -68,10 +89,10 @@ header {
   position: fixed;
   top: 0;
   left: -250px;
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 999;
-  background-color: #333333 !important;
-  color: white;
+  background-color: white !important;
+  color: #333333 !important;
   transition: all 0.3s;
   overflow-y: scroll;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -119,7 +140,7 @@ header {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #333333;
+  background: white;
 }
 
 #sidebar ul.components {

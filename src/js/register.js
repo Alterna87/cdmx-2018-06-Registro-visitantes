@@ -39,7 +39,8 @@ const showsnapshot = () => {
   document.getElementById('picture').style.display = 'block';
   document.getElementById('arrow-right').style.display = 'none';
   let arrowSig = document.getElementById('arrow-sig');
-  arrowSig.innerHTML = '<a class = "color-yellow" id="arrow-register-right"><i class="material-icons font-icon">arrow_forward_ios</i></a>'
+  arrowSig.innerHTML =  `<button type='button' class=' col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
+  </button>`
   let arrowRightRegister = document.getElementById('arrow-register-right');
   arrowRightRegister.addEventListener('click', showRegister);
   // let arrowRight = document.getElementsByClassName('arrow-right');
