@@ -92,7 +92,7 @@ const showmodal = () => {
   let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
-
+    
   }, error =>{
     alert('No se cargo debidamente la imagen');
   }, () => {
@@ -102,6 +102,7 @@ const showmodal = () => {
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       database.uploadData(name, lastname, downloadURL, company, empleado, date, time);
       database.readData(empleado);
+      // email();
 
     // modified by Francis
     });
@@ -207,5 +208,5 @@ window.onload = () => {
     document.getElementById('templete-empleados').innerHTML = '';
 
     return document.getElementById('empleado').value = name;
-  }
+  };
 };
