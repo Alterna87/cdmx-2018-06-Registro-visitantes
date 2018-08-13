@@ -44,16 +44,26 @@
           <button type="button" id="recapture" class="btn btn-success btn-lg col-md-4 offset-4 margin-btn">Volver a Tomar Foto</button>
         </section>
         <section id="register">
-
-          <!-- search de empleado -->
-
           <div class="form-group">
+            <!-- search por company -->
+            <div class="form-group">
+              <label for="exampleSelect1">Empresas </label>
+              <select class="form-control" id="select-empresas">
+                <option>Selecciona Empresa</option>
+                <!-- <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option> -->
+              </select>
+            </div>
+            <!-- search de empleado -->
             <label for="exampleInputEmail1">Buscar Empleado</label>
             <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas...">
             <ul class="list-group" id="templete-empleados">
-              <!-- aqui va el templete -->
+              <!-- aqui va el templete empleados-->
             </ul>
             <input type="text" class="form-control" id="company">
+            <!-- boton de notificar -->
             <button type="button" class="btn btn-warning btn-lg col-md-4 offset-4" id="notification">Notificar</button>
           </div>
           <!-- <section class="form-group">
