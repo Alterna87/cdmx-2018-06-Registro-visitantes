@@ -26,13 +26,17 @@ captureButton.addEventListener('click', () => {
   // });
 
 });
+const toBack =() => {
+  location.href = ('../index.html');
+}
 
 const showRegister = () => {
   let company = document.getElementById('register');
   let picture = document.getElementById('picture');
   company.style.display = 'block';
   picture.style.display = 'none';
-
+  document.getElementById('arrow-sig').style.display = 'none';
+document.getElementById('body-bg').classList.remove("almost-dark");
 }
 const showsnapshot = () => {
   document.getElementById('data-general').style.display = 'none';
@@ -60,22 +64,20 @@ recapture.addEventListener('click', () => {
 });
 
 const showmodal = () => {
+  document.getElementById('body-bg').classList.add("almost-dark");
   let name = document.getElementById('name-visit').value;
   let lastname = document.getElementById('lastname-visit').value;
-  let email = document.getElementById('email-visit').value;
-  let company = document.getElementById('company').value;
-  swal({
+  let company = document.getElementById('empleado').value;
+  document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola, ${name} ${lastname}</h3>
+  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${company} de tu llegada</p>
+  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
+  <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
 
-    position: 'top-end',
-    type: 'success',
-    title: `Bienvenido ${name}`,
-    html: `Se le ha enviado una notificación a ${company} <br>` +
-      `Toma asiento Por favor`,
-    showConfirmButton: false,
-    timer: 1500
-  })
+  `;
 
-}
+  document.getElementById('ready').addEventListener('click', toBack);
+
+};
 
 let arrowRight = document.getElementById('arrow-right');
 arrowRight.addEventListener('click', showsnapshot);
