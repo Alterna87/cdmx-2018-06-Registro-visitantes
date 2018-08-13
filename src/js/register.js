@@ -1,15 +1,16 @@
-// TODO:
+
 // funcion de notificar
 
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
 let camera = document.getElementById('camera');
 let recapture = document.getElementById('recapture');
+
 const handleSuccess = (stream) => {
   player.srcObject = stream;
 };
 
-captureButton.addEventListener('click', () => {
+  captureButton.addEventListener('click', () => {
   let shot = document.getElementById('shot');
   shot.innerHTML = `<canvas id= 'snapshot' width='220' height='220' class = 'col-md-12 rounded-circle'>
   </canvas>`;
@@ -67,7 +68,7 @@ recapture.addEventListener('click', () => {
 
 const showNotification = () => {
   document.getElementById('notificar').addEventListener('click', (event) => {
-    console.log('hola mundo');
+    // enviar correos
   })
 }
 const showmodal = () => {
@@ -81,13 +82,13 @@ const showmodal = () => {
   document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola ${name}</h3>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
-  <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
+  <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listo</button>
   `;
   let snap = snapshotCanvas.toDataURL();
   // console.log(snap);
   let fecha = new Date();
   let date = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear();
-  let time = fecha.getHours() + ':' + fecha.getMinutes()
+  let time = fecha.getHours() + ':' + fecha.getMinutes();
   let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
@@ -97,8 +98,10 @@ const showmodal = () => {
   }, () => {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       database.uploadData(name, lastname, downloadURL, company, empleado, date, time);
+      database.readData(empleado);
 
     // modified by Francis
     });
