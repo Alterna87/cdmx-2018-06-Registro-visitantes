@@ -35,17 +35,17 @@ const showRegister = () => {
   company.style.display = 'block';
   picture.style.display = 'none';
   document.getElementById('arrow-sig').style.display = 'none';
-  document.getElementById('body-bg').classList.remove('almost-dark');
+  document.getElementById('body-bg').classList.remove("almost-dark");
 };
 
 const showsnapshot = () => {
+  document.getElementById('body-bg').classList.add('almost-dark');
   document.getElementById('data-general').style.display = 'none';
   document.getElementById('picture').style.display = 'block';
   document.getElementById('arrow-right').style.display = 'none';
   let arrowSig = document.getElementById('arrow-sig');
   arrowSig.innerHTML = `<button type='button' class= 'col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle' id='arrow-register-right'><i class='material-icons font-icon'>arrow_forward</i>
   </button>`;
-  document.getElementById('body-bg').classList.add('almost-dark"');
   let arrowRightRegister = document.getElementById('arrow-register-right');
   arrowRightRegister.addEventListener('click', showRegister);
   // let arrowRight = document.getElementsByClassName('arrow-right');

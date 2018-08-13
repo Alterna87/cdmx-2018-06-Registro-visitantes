@@ -15,7 +15,7 @@ window.database = {
   uploadData: (name, lastname, downloadURL, company) => {
     firebase.database().ref('visiters').push({
         name: name,
-        lastname: lastname,
+      lastname: lastname,
         images: downloadURL,
         company: company,
       });
