@@ -64,7 +64,7 @@ recapture.addEventListener('click', () => {
 
 const showmodal = () => {
   let refImages = firebase.storage().ref();
- let snapshotCanvas = document.getElementById('snapshot');
+  let snapshotCanvas = document.getElementById('snapshot');
   document.getElementById('body-bg').classList.add('almost-dark');
   let name = document.getElementById('name-visit').value;
   let lastname = document.getElementById('lastname-visit').value;
@@ -76,8 +76,8 @@ const showmodal = () => {
   `;
   let snap = snapshotCanvas.toDataURL();
   // console.log(snap);
-  var fecha = new Date();
-
+  let fecha = new Date();
+  let time = fecha.getHours() + ':' + fecha.getMinutes()
   let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
@@ -89,6 +89,8 @@ const showmodal = () => {
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       console.log(downloadURL);
+      console.log(name);
+      database.uploadData(name, lastname, downloadURL, company);
       // firebase.database().ref('user/posts').push({
       //   ui: user.uid,
       //   name: user.displayName,
@@ -103,8 +105,6 @@ const showmodal = () => {
       // });
     // modified by Francis
     });
-
-
   });
   //   c
   // var fecha = new Date();
