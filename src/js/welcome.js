@@ -8,7 +8,7 @@ register.addEventListener('click', begin);
 
 
 // JQuery
-$(document).ready(()=> {
+$(document).ready(() => {
   $('#sidebar').mCustomScrollbar({
     theme: 'minimal'
   });

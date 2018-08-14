@@ -17,8 +17,8 @@
 <body id="body-bg">
   <header>
     <section id="arrow-sig" class="">
-      <button type="button" class=" col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle" id="arrow-right"><i
-          class="material-icons font-icon">arrow_forward</i>
+      <button type="button" class=" col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle" id="arrow-right">
+        <i class="material-icons font-icon">arrow_forward</i>
       </button>
     </section>
   </header>
@@ -38,8 +38,10 @@
           </section>
         </section>
         <section id="picture" class="col-md-11 offset-1 ">
-          <video id="player" autoplay class="rounded-circle">
-          </video>
+          <div class="video-container">
+            <video id="player" autoplay>
+            </video>
+          </div>
           <section id="shot">
           </section>
 
@@ -63,11 +65,11 @@
             </div>
             <!-- search de empleado -->
             <label for="exampleInputEmail1">Buscar Empleado</label>
-            <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas...">
+            <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas..." autocomplete="false">
             <ul class="list-group" id="templete-empleados">
               <!-- aqui va el templete empleados-->
             </ul>
-            <input type="text" class="form-control" id="company">
+            <!-- <input type="text" class="form-control" id="company"> -->
             <!-- boton de notificar -->
             <button type="button" class="btn btn-warning btn-lg col-md-4 offset-4" id="notification">Notificar</button>
           </div>
@@ -95,6 +97,9 @@
   <script type="text/javascript" src="../js/email.js"></script>
   <script type="text/javascript" src="../js/database.js"></script>
   <script type="text/javascript" src="../js/register.js"></script>
+  <script type="text/javascript" src="../js/database.js"></script>
+  <script type="text/javascript" src="../js/register.js"></script>
+  <!-- <script type="text/javascript" src="../js/home.js"></script> -->
 
 </body>
 
