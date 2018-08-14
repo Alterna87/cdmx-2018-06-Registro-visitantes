@@ -96,10 +96,10 @@ const showmodal = () => {
     });
   });
 
- 
+ document.getElementById('ready').addEventListener('click', toBack);
 };
 
- document.getElementById('ready').addEventListener('click', toBack);
+ 
 
 //  flechas de siguiente
 let arrowRight = document.getElementById('arrow-right');
