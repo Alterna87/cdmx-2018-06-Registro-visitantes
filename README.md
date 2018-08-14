@@ -100,7 +100,7 @@ Se realizó una investigación en la cual se comparan los diferentes tipos de Co
 
  [_Click aquí_](https://docs.google.com/presentation/d/1xmvGOvEaOghzcFiowpBZyx2NfQ2B4Z9QtKZItzku70k/edit?usp=sharing)
 
-###  Realizó un Benchmark de los coworking a lo cuales nos dirigimos a realizar entrevistas y conocer más acerca de su como manejan ellos el registro de visitantes:
+###  Se realizó un Benchmark de los coworking a lo cuales nos dirigimos a realizar entrevistas y conocer más acerca de su como manejan ellos el registro de visitantes:
 
 ![Benchamark](./src/img/benchmarkrv.png)
 
