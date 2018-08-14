@@ -1,5 +1,5 @@
 // TODO:
-// funcion de notificar
+// funcion de administrador para ver el home
 
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
@@ -79,7 +79,7 @@ const showmodal = () => {
   let company = document.getElementById('select-empresas').value;
   let empleado = document.getElementById('empleado').value;
   document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola ${name}</h3>
-  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado} de tu llegada</p>
+  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado.toUpperCase()} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
   <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
   `;
@@ -92,7 +92,7 @@ const showmodal = () => {
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
 
-  }, error =>{
+  }, error => {
     alert('No se cargo debidamente la imagen');
   }, () => {
     // Handle successful uploads on complete
@@ -100,7 +100,7 @@ const showmodal = () => {
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       database.uploadData(name, lastname, downloadURL, company, empleado, date, time);
 
-    // modified by Francis
+      // modified by Francis
     });
   });
   //   c
@@ -119,11 +119,15 @@ notification.addEventListener('click', showmodal);
 //   acceso a la camara
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
-
-
-
-
 // Hasta aquí aplica cambios Francis
+
+// funcion admin
+// const homeAdmin = document.getElementById('visiter').addEventListener('click', () => {
+//   console.log('hola mundo');
+// window.location.href = ('../views/home.html');
+// });
+
+
 
 //  funcionalidad del search para buscar empleados
 window.onload = () => {
@@ -206,3 +210,9 @@ window.onload = () => {
     return document.getElementById('empleado').value = name;
   };
 };
+
+// mandar al home del admin
+// document.getElementById('visiter').addEventListener('click', () => {
+//   console.log('hola mundo');
+//   window.location.href = ('../views/home.html');
+// });
