@@ -1,10 +1,11 @@
-// TODO:
+
 // funcion de notificar
 
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
 let camera = document.getElementById('camera');
 let recapture = document.getElementById('recapture');
+
 const handleSuccess = (stream) => {
   player.srcObject = stream;
 };
@@ -65,11 +66,6 @@ recapture.addEventListener('click', () => {
   snapshotCanvas.style.display = 'none';
 });
 
-// const showNotification = () => {
-//   document.getElementById('notificar').addEventListener('click', (event) => {
-//     console.log('hola mundo');
-//   })
-// }
 const showmodal = () => {
   let refImages = firebase.storage().ref();
   let snapshotCanvas = document.getElementById('snapshot');
@@ -81,30 +77,27 @@ const showmodal = () => {
   document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola ${name}</h3>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
-  <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listos</button>
+  <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listo</button>
   `;
   let snap = snapshotCanvas.toDataURL();
   // console.log(snap);
   let fecha = new Date();
   let date = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear();
-  let time = fecha.getHours() + ':' + fecha.getMinutes()
+  let time = fecha.getHours() + ':' + fecha.getMinutes();
   let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
 
-  }, error =>{
+  }, error => {
     alert('No se cargo debidamente la imagen');
   }, () => {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       database.uploadData(name, lastname, downloadURL, company, empleado, date, time);
-
-    // modified by Francis
+      database.readData(empleado, name);
     });
   });
-  //   c
-  // var fecha = new Date();
 
   document.getElementById('ready').addEventListener('click', toBack);
 };
@@ -119,9 +112,6 @@ notification.addEventListener('click', showmodal);
 //   acceso a la camara
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
-
-
-
 
 // Hasta aquí aplica cambios Francis
 

@@ -100,13 +100,21 @@ Se realizó una investigación en la cual se comparan los diferentes tipos de Co
 
  [_Click aquí_](https://docs.google.com/presentation/d/1xmvGOvEaOghzcFiowpBZyx2NfQ2B4Z9QtKZItzku70k/edit?usp=sharing)
 
-###  Realizó un Benchmark de los coworking a lo cuales nos dirigimos a realizar entrevistas y conocer más acerca de su como manejan ellos el registro de visitantes:
+###  Se realizó un Benchmark de los coworking a lo cuales nos dirigimos a realizar entrevistas y conocer más acerca de su como manejan ellos el registro de visitantes:
 
 ![Benchamark](./src/img/benchmarkrv.png)
 
 Como siguiente paso se realizaron algunos  sketch a lapiz y papel donde se plasma a grandes rasgos la interfaz con los elementos que ayudaran con la interacción de la interfaz. Aqui en el link de la secuencia de sketch :
 
+* Primeros sketch :
+
 [_Click aquí_](https://docs.google.com/presentation/d/1OKGu0rqYmk2novQA1ctLZfp-BxMHaH20vllV8BTN8s0/edit?usp=sharing)
+
+
+* Sketch Actualizados:
+
+[_Click aquí_](https://docs.google.com/presentation/d/1mWJDjIbAdeBhPBGK0gZy5uGk5oibAonBSvPPCkmH7Uc/edit#slide=id.p)
+
 
 
 Una vez que se definieron las nececidades de nuestro producto comenzamos con un User Flow, para ayudarnos  a comprender el comportamiento  y asi poder materializar frente al cliente las interacciones de los usuarios con el producto, llegando asi al funcionamiento del producto solicitado, como se muestra a continuación:
@@ -116,10 +124,21 @@ Una vez que se definieron las nececidades de nuestro producto comenzamos con un 
 
 Luego de observar como se vería nuestra interfaz en lapiz y papel , y plasmando todos los requerimientos que se necesitaban se procedió a realizar a color  las interfaces con ayuda de Figma. Se buscó que nuestra interfaz  fuera los mas amigable posible , fácil de usar pero sobre todo fácil de entender para el usuario.
 
-Aquí en link de los mismos:
-
+* Primeros bocetos en figma:
 
 ![Figma](./src/img/secuenciafigma.png)
+
+
+* Bocetos finales en Figma para registro de visitantes:
+
+[_Click aquí_](https://www.figma.com/file/za6oQguT3kMAHcGE0VYcLs/Sample-File-(Copy)?node-id=0%3A1)
+
+
+* Bocetos finales en figma para el Administrador :
+
+
+[_Click aquí_](https://www.figma.com/file/8uPkSpaaH2el1dU1RnQPMZ/Sample-File-(Copy)-(Copy))
+
 
 ## Entrevistas a 3 Coworking
 
@@ -148,16 +167,32 @@ Preguntas realizadas:
 * Tocan el interphone y se les pregunta con quien vienen, y si esta correcto le dan acceso pero tienen que subir hasta el 4to piso a registrarse y luego bajar al 2do o 3er piso que es donde están las oficinas. Comenta la chica que es bastante tedioso para los visitantes.
 * Comenta que le gustaria un sistema digitalizado el cual puedan tener en un ipad y que los registros se guarden automáticamente en la nube.
 
+# Algunas fotos tomadas en las entrevistas:
+
+
+
+![Foto1](./src/img/img1.jpeg)
+
+
+![Foto2](./src/img/img2.jpeg)
+
+
+![Foto3](./src/img/img3.jpeg)
+
+
+![Foto4](./src/img/img4.jpg)
+
+
+![Foto5](./src/img/img5.jpg)
+
 ### A continuación se mostrarán las fotografías del fotmato manual que utilizan para los registros, se mostrará un link con los audios de 2 de las entrevistas realizadas y un link que los llevará al video que se realizó en la 3era enrevista, la cual cabe acotar fue meramente visual ya que no pudimos conversar con alguna persona que trabajará en dicho coworking.
 
 
 
-Audio y papeleta de la entrevista a Miriam Castañeda de Terminal 1:
+Audio de la entrevista a Miriam Castañeda de Terminal 1:
 
 [_Click aquí_](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/audios/entrevistaterminal1.mp4)
 
-
-![Papeleta](./src/img/registroterminal1.jpeg)
 
 
 
@@ -177,7 +212,11 @@ Video realizado en el Coworking-Wework
 
 [_Click aquí_](https://github.com/Vicky2813/cdmx-2018-06-Registro-visitantes/raw/master/src/videos/sistemaderegistro.mp4)
 
-Aqui el prototipo clicleable
-[_Click aquí_](https://invis.io/TCNGETNXUVG#/313651059_Figma1-1)
 
+# Luego de la relización de los prototipos en figma en modo estático y de las investigaciones realizadas con sus respectivas entrevistas, se procedió a realizar los prototipos en modo clickable como se muestra a continuación:
+
+
+* Prototipo final  clickable :
+
+[_Click aquí_](https://invis.io/TCNGETNXUVG#/314089924_Figma1-1)
 
