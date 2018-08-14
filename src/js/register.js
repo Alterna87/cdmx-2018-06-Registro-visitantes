@@ -1,6 +1,3 @@
-
-// funcion de notificar
-
 let player = document.getElementById('player');
 let captureButton = document.getElementById('capture');
 let camera = document.getElementById('camera');
@@ -66,11 +63,6 @@ recapture.addEventListener('click', () => {
   snapshotCanvas.style.display = 'none';
 });
 
-const showNotification = () => {
-  document.getElementById('notificar').addEventListener('click', (event) => {
-    // enviar correos
-  });
-}
 const showmodal = () => {
   let refImages = firebase.storage().ref();
   let snapshotCanvas = document.getElementById('snapshot');
@@ -80,7 +72,7 @@ const showmodal = () => {
   let company = document.getElementById('select-empresas').value;
   let empleado = document.getElementById('empleado').value;
   document.getElementById('frm-register').innerHTML = `<h3 class ='col-md offset-1 left-subtitle font-white medium-font text-center'>Hola ${name}</h3>
-  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado} de tu llegada</p>
+  <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Se le ha notificado a ${empleado.toUpperCase()} de tu llegada</p>
   <p class= 'col-md offset-1 left-subtitle font-white text-center font-subtitle'>Por favor espera y toma asiento</p>
   <button class= 'btn btn-warning btn-lg col-md-4 offset-4 btn-ready' id = 'ready'>Listo</button>
   `;
@@ -93,7 +85,7 @@ const showmodal = () => {
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
 
-  }, error =>{
+  }, error => {
     alert('No se cargo debidamente la imagen');
   }, () => {
     // Handle successful uploads on complete
@@ -117,7 +109,6 @@ notification.addEventListener('click', showmodal);
 //   acceso a la camara
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
-
 // Hasta aquí aplica cambios Francis
 
 //  funcionalidad del search para buscar empleados
@@ -184,19 +175,10 @@ window.onload = () => {
     }).join('');
 
     document.getElementById('templete-empleados').innerHTML = empleadosFiltrados;
-
-    // console.log(event.target.value);
-    // const filtrarEmpleados = response.filter((empleado) => {
-    //   return empleado.name.toUpperCase().indexOf(event.target.value.toUpperCase()) > -1;
-    // }).map((empleado) => {
-    //   return (`<li class="list-group-item-secondary" onclick="pintaEmpleado()">${empleado.name} ${empleado.lastname}</li>`);
-    // }).join('');
-    // document.getElementById('templete-empleados').innerHTML = filtrarEmpleados;
-    // console.log(filtrarEmpleados);
   });
 
   window.pintaEmpleado = (name) => {
-    document.getElementById('templete-empleados').innerHTML = '';
+    // document.getElementById('templete-empleados').innerHTML = '';
 
     return document.getElementById('empleado').value = name;
   };

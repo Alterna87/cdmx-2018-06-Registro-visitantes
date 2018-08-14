@@ -41,7 +41,7 @@ window.database = {
       .then(result => {
         location.href = ('home.html');
       })
-      .catch(function(error) {
+      .catch(function (error) {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;

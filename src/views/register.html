@@ -14,41 +14,48 @@
   <title>Registro de Visitantes</title>
 </head>
 
-<body id="body-bg" >
+<body id="body-bg">
   <header>
-    <section id="arrow-sig" class= "">
-      <button type="button" class=" col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle" id="arrow-right"><i class="material-icons font-icon">arrow_forward</i>
+    <section id="arrow-sig" class="">
+      <button type="button" class=" col-md-1 offset-10 btn btn-warning btn-circle btn-lg rounded-circle" id="arrow-right">
+        <i class="material-icons font-icon">arrow_forward</i>
       </button>
     </section>
-    </header>
+  </header>
   <section class="container">
     <section id="frm-register" class="frm-visits">
       <form role="form" data-toggle="validator">
         <section id="data-general">
           <section class="form-group has-feedback">
-          <input type="text" class="form-control" id="name-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Nombre / Name" pattern ="^[_A-z,0-9]{1,0}$" data-error="Escribe tu nombre" required>
+            <input type="text" class="form-control" id="name-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Nombre / Name"
+              pattern="^[_A-z,0-9]{1,0}$" data-error="Escribe tu nombre" required>
 
           </section>
 
           <section class="form-group">
-          <input type="text" class="form-control" id="lastname-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Apellido / Last name" required>
+            <input type="text" class="form-control" id="lastname-visit" aria-describedby="inputGroup-sizing-lg" placeholder="Apellido / Last name"
+              required>
           </section>
         </section>
         <section id="picture" class="col-md-11 offset-1 ">
-          <video id="player" autoplay  class="rounded-circle">
-          </video>
+          <div class="video-container">
+            <video id="player" autoplay>
+            </video>
+          </div>
           <section id="shot">
           </section>
 
           <button type="button" id="capture" class="btn btn-success btn-lg col-md-4 offset-4 margin-btn">Foto</button>
-          <button type="button" id="recapture" class="btn btn-success btn-lg col-md-4 offset-4 margin-btn">Volver a Tomar Foto</button>
+          <button type="button" id="recapture" class="btn btn-success btn-lg col-md-4 offset-4 margin-btn">Volver a Tomar
+            Foto
+          </button>
         </section>
         <section id="register">
           <div class="form-group">
             <!-- search por company -->
             <div class="form-group">
               <label for="exampleSelect1">Empresas </label>
-              <select class="form-control" id = "select-empresas">
+              <select class="form-control" id="select-empresas">
                 <option>Selecciona Empresa</option>
                 <!-- <option>2</option>
                 <option>3</option>
@@ -58,11 +65,11 @@
             </div>
             <!-- search de empleado -->
             <label for="exampleInputEmail1">Buscar Empleado</label>
-            <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas...">
+            <input type="text" class="form-control" id="empleado" aria-describedby="emailHelp" placeholder="A quien visitas..." autocomplete="false">
             <ul class="list-group" id="templete-empleados">
               <!-- aqui va el templete empleados-->
             </ul>
-            <input type="text" class="form-control" id="company">
+            <!-- <input type="text" class="form-control" id="company"> -->
             <!-- boton de notificar -->
             <button type="button" class="btn btn-warning btn-lg col-md-4 offset-4" id="notification">Notificar</button>
           </div>
@@ -84,13 +91,16 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js">
-       </script>
-       <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-       <script type="text/javascript" src="../js/email.js"></script>
-    <script type="text/javascript" src="../js/database.js"></script>
-    <script type="text/javascript" src="../js/register.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js">
+  </script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="../js/email.js"></script>
+  <script type="text/javascript" src="../js/database.js"></script>
+  <script type="text/javascript" src="../js/register.js"></script>
+  <script type="text/javascript" src="../js/database.js"></script>
+  <script type="text/javascript" src="../js/register.js"></script>
+  <!-- <script type="text/javascript" src="../js/home.js"></script> -->
 
-    </body>
+</body>
 
 </html>
