@@ -25,14 +25,13 @@ window.database = {
   },
 
   readData: (empleado, visiter) => {
-    let email;
     firebase.database().ref('empleados')
       .on('value', snapshot => {
         snapshot.forEach(event => {
           let element = event.val();
           if (element.name === empleado) {
-            email(element.email, element.name, visiter);
-          }
+            email(element.email, empleado, visiter);
+          };
         });
       });
   }

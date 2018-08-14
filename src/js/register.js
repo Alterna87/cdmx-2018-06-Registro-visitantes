@@ -10,7 +10,7 @@ const handleSuccess = (stream) => {
   player.srcObject = stream;
 };
 
-  captureButton.addEventListener('click', () => {
+captureButton.addEventListener('click', () => {
   let shot = document.getElementById('shot');
   shot.innerHTML = `<canvas id= 'snapshot' width='220' height='220' class = 'col-md-12 rounded-circle'>
   </canvas>`;
@@ -92,23 +92,17 @@ const showmodal = () => {
   let nameImage = fecha.getMonth() + '-' + fecha.getDate() + '-' + fecha.getFullYear() + '-' + fecha.getHours() + '-' + fecha.getMinutes() + '-' + fecha.getSeconds() + '.png';
   let uploadImages = refImages.child(`images/${nameImage}`).putString(snap, 'data_url');
   uploadImages.on('state_changed', snapshot => {
-    
+
   }, error =>{
     alert('No se cargo debidamente la imagen');
   }, () => {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
     uploadImages.snapshot.ref.getDownloadURL().then(downloadURL => {
       database.uploadData(name, lastname, downloadURL, company, empleado, date, time);
-      database.readData(empleado);
-      // email();
-
-    // modified by Francis
+      database.readData(empleado, name);
     });
   });
-  //   c
-  // var fecha = new Date();
 
   document.getElementById('ready').addEventListener('click', toBack);
 };
@@ -123,9 +117,6 @@ notification.addEventListener('click', showmodal);
 //   acceso a la camara
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(handleSuccess);
-
-
-
 
 // Hasta aquí aplica cambios Francis
 
