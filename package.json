@@ -1,5 +1,5 @@
 {
-  "name": "Visitor Register",
+  "name": "visitor-register",
   "version": "1.0.0",
   "main": "src/index.html",
   "license": "MIT",
@@ -9,7 +9,8 @@
     "pretest": "npm run eslint && npm run htmlhint",
     "test-browser": "opener ./test/index.html",
     "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
-    "test": "npm run test-node"
+    "test": "npm run test-node",
+    "dev": "browser-sync start --server src --files src/*.*"
   },
   "dependencies": {
     "eslint": "^4.19.1",

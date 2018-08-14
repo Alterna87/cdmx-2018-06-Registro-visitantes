@@ -1,0 +1,142 @@
+{
+  "empleados": [
+    {
+      "name": "Adriana",
+      "lastname": "Vázquez",
+      "company": 1,
+      "email": "luna.vazquezv@gmail.com"
+    },
+    {
+      "name": "Victoria",
+      "lastname": "Acosta",
+      "company": 1,
+      "email": "vicky.acostahidalgo@gmail.com"
+    },
+    {
+      "name": "Francisca",
+      "lastname": "Velueta",
+      "company": 1,
+      "email": "fvelueta@outlook.com"
+    },
+    {
+      "name": "Lucile",
+      "lastname": "Baratier",
+      "company": 1,
+      "email": "lucile@laboratoria.la"
+    },
+    {
+      "name": "Paulina",
+      "lastname": "Trevino",
+      "company": 1,
+      "email": "paulina@laboratoria.la "
+    },
+    {
+      "name": "Jessica",
+      "lastname": "Pérez",
+      "company": 2,
+      "email": "jess.pe@mail.com"
+    },
+    {
+      "name": "Roberto",
+      "lastname": "González",
+      "company": 2,
+      "email": "ro.gonzalez@mail.com"
+    },
+    {
+      "name": "Leticia",
+      "lastname": "Velasco",
+      "company": 2,
+      "email": "lety.vel@mail.com"
+    },
+    {
+      "name": "Javier",
+      "lastname": "Vázquez",
+      "company": 2,
+      "email": "javaz@mail.com"
+    },
+    {
+      "name": "José",
+      "lastname": "Martínez",
+      "company": 2,
+      "email": "jo.mart@mail.com"
+    },
+    {
+      "name": "Ángel",
+      "lastname": "Márquez",
+      "company": 3,
+      "email": "angel.ma@mail.com"
+    },
+    {
+      "name": "Juán",
+      "lastname": "Pérez",
+      "company": 3,
+      "email": "juperez@mail.com"
+    },
+    {
+      "name": "Angélica",
+      "lastname": "Fernández",
+      "company": 3,
+      "email": "ange.fe@mail.com"
+    },
+    {
+      "name": "Esteban",
+      "lastname": "Rodríguez",
+      "company": 3,
+      "email": "esteb.ro@mail.com"
+    },
+    {
+      "name": "Lourdes",
+      "lastname": "Benavides",
+      "company": 3,
+      "email": "lulu.be@mail.com"
+    },
+    {
+      "name": "Arturo",
+      "lastname": "Cárdenas",
+      "company": 4,
+      "email": "artur-ca@mail.com"
+    },
+    {
+      "name": "Raúl",
+      "lastname": "Benítez",
+      "company": 4,
+      "email": "rulo-tez@mail.com"
+    },
+    {
+      "name": "Rodrigo",
+      "lastname": "Hernández",
+      "company": 4,
+      "email": "rodri_dez@mail.com"
+    },
+    {
+      "name": "Abril",
+      "lastname": "Díaz",
+      "company": 4,
+      "email": "abidi@mail.com"
+    },
+    {
+      "name": "Paty",
+      "lastname": "Monroy",
+      "company": 4,
+      "email": "paty.mo@mail.com"
+    }
+  ],
+  "empresas": [
+    {
+      "name": "Laboratoria",
+      "id": 1
+    },
+    {
+      "name": "Company2",
+      "id": 2
+    },
+    {
+      "name": "Company3",
+      "id": 3
+    },
+    {
+      "name": "Company4",
+      "id": 4
+    }
+  ]
+}
