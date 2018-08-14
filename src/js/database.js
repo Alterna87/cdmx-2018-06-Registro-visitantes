@@ -14,13 +14,25 @@ window.database = {
 
   uploadData: (name, lastname, downloadURL, company, empleado, date, time) => {
     firebase.database().ref('visiters').push({
-        name: name,
-        lastname: lastname,
-        images: downloadURL,
-        company: company,
-        empleado: empleado,
-        date: date,
-        time: time
+      name: name,
+      lastname: lastname,
+      images: downloadURL,
+      company: company,
+      empleado: empleado,
+      date: date,
+      time: time
+    });
+  },
+
+  readData: (empleado, visiter) => {
+    firebase.database().ref('empleados')
+      .on('value', snapshot => {
+        snapshot.forEach(event => {
+          let element = event.val();
+          if (element.name === empleado) {
+            email(element.email, empleado, visiter);
+          };
+        });
       });
   }
 };
