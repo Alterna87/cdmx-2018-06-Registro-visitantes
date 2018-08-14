@@ -69,7 +69,7 @@ recapture.addEventListener('click', () => {
 const showNotification = () => {
   document.getElementById('notificar').addEventListener('click', (event) => {
     // enviar correos
-  })
+  });
 }
 const showmodal = () => {
   let refImages = firebase.storage().ref();

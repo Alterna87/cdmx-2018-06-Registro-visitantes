@@ -2,7 +2,7 @@ const email = (email, name, visiter) => {
   (()=> {
     emailjs.init('user_nhhZsQqfBmhKeYEKe78KN');
   })();
-// Añado los parametros que quiero que contenga mi plantilla
+  // Añado los parametros que quiero que contenga mi plantilla
   let templateParams = {
     name: name,
     user_email: email,

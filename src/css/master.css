@@ -48,6 +48,10 @@ margin-left: 348px !important;
 .frm-visits {
   margin-top: 181px;
 }
+.mg-left {
+margin-top: 158px;
+
+}
 
 header {
   margin-top: 25px;
@@ -74,6 +78,15 @@ header {
 .btn-ready {
       margin-top: 103px !important;
 }
+.pd-aout {
+
+  margin-top: 25px;
+}
+
+.pd-btn {
+  margin-bottom: 20px !important;
+}
+
 input {
   outline: 0;
   border-width: 0 0 2px !important;
@@ -94,7 +107,10 @@ border-radius: 5px 30px 45px 60px;
 }
 
 
+.bg-gray {
+  background-color: #cfc9c9;
 
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
